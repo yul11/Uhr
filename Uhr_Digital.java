@@ -30,8 +30,14 @@ public class Uhr_Digital extends JFrame {
 	private class GetTimeThread extends Thread{
 		public void run() {
 			while (true) {
-				if (stateUhrDigital==1){
-					
+				
+		        try {
+					Thread.sleep(20);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+		        
+				if (stateUhrDigital==1){					
 					System.out.println("Uhr_Digital()-> state1");
 					hr.setText ("Stunden:"  + (b.heute.get(Calendar.HOUR_OF_DAY)));
 					
